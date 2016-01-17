@@ -117,5 +117,11 @@ $.fn.extend({
 		if(!$.trim($(this).html())) {
 			$(this).html(_this._opt.placeholader);
 		}
+	},
+	getValue: function() {
+		return $(this).html();
+	},
+	setValue: function(str) {
+		$(this).html(str);
 	}
 });
