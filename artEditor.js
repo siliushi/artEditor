@@ -80,6 +80,7 @@ $.fn.extend({
 		        hasLastChild = hasLastChild.previousSibling;
 		        hasR.removeChild(e);
 		    }
+		    range.insertNode(range.createContextualFragment("<br/>"));
 		    range.insertNode(hasR);
 		    if (hasLastChild) {
 		        range.setEndAfter(hasLastChild);
@@ -92,13 +93,13 @@ $.fn.extend({
 	pasteHandler: function() {
 		var _this = this;
 		$(this).on("paste", function() {
-			var content = $(this).html();
+			/*var content = $(this).html();
 			valiHTML = _this._opt.validHtml;
 			content = content.replace(/_moz_dirty=""/gi, "").replace(/\[/g, "[[-").replace(/\]/g, "-]]").replace(/<\/ ?tr[^>]*>/gi, "[br]").replace(/<\/ ?td[^>]*>/gi, "&nbsp;&nbsp;").replace(/<(ul|dl|ol)[^>]*>/gi, "[br]").replace(/<(li|dd)[^>]*>/gi, "[br]").replace(/<p [^>]*>/gi, "[br]").replace(new RegExp("<(/?(?:" + valiHTML.join("|") + ")[^>]*)>", "gi"), "[$1]").replace(new RegExp('<span([^>]*class="?at"?[^>]*)>', "gi"), "[span$1]").replace(/<[^>]*>/g, "").replace(/\[\[\-/g, "[").replace(/\-\]\]/g, "]").replace(new RegExp("\\[(/?(?:" + valiHTML.join("|") + "|img|span)[^\\]]*)\\]", "gi"), "<$1>");
 			if (!/firefox/.test(navigator.userAgent.toLowerCase())) {
 			    content = content.replace(/\r?\n/gi, "<br>");
 			}
-			$(this).html(content);
+			$(this).html(content);*/
 		});
 	},
 	placeholderHandler: function() {
