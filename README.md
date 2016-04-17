@@ -1,6 +1,6 @@
 # artEditor   
 artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图片，后续完善其他功能。   
-    
+[demo](http://baixuexiyang.github.io/artEditor/)，为了更好的效果请将浏览器设置为手机模式        
 # 引用
 在页面中引入下面资源   
 ```
@@ -29,8 +29,18 @@ artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图�
   图片上传成功回调       
 ### uploadError    
   图片上传失败回调       
+### formInputId     
+  表单隐藏域id，如果设置，则编辑器内容会储存到该元素value值         
     
 
+# Methods      
+  
+### getValue   
+    获取值，$('#content').getValue()    
+### setValue   
+    设置值，$('#content').setValue('<div></div>')    
+    
+     
 # Example
 html:
 ```
@@ -62,3 +72,13 @@ $('#content').artEditor({
 
 # Issues  
 [new Issue](https://github.com/baixuexiyang/artEditor/issues/new)
+
+
+# Release    
+ + 增加获取值和设置值的方法    
+ + 去掉粘贴时过滤不允许的HTML标签    
+ + 插入图片自动换行      
+2016-03-28    
+ + 增加拍照上传图片     
+2016-04-17     
+ + 增加表单提交功能

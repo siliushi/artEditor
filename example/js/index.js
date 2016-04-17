@@ -9,7 +9,8 @@ $(function() {
 		data: {},
 		uploadField: 'image',
 		placeholader: '<p>请输入文章正文内容</p>',
-		validHtml: ["br"],
+		validHtml: ["<br/>"],
+		formInputId: 'target',
 		uploadSuccess: function(res) {
 			// return img url
 			return res.path;

@@ -44,6 +44,11 @@ $.fn.extend({
 		} catch(e) {
 			console.log(e);
 		}
+		if(_this._opt.formInputId && $('#'+_this._opt.formInputId)[0]) {
+			$(_this).on('input', function() {
+				$('#'+_this._opt.formInputId).val(_this.getValue());
+			});
+		}
 	},
 	upload: function(data) {
 		var _this = this, filed = _this._opt.uploadField;
@@ -80,6 +85,7 @@ $.fn.extend({
 		        hasLastChild = hasLastChild.previousSibling;
 		        hasR.removeChild(e);
 		    }
+		    range.insertNode(range.createContextualFragment("<br/>"));
 		    range.insertNode(hasR);
 		    if (hasLastChild) {
 		        range.setEndAfter(hasLastChild);
@@ -88,11 +94,16 @@ $.fn.extend({
 		    selection.removeAllRanges();
 		    selection.addRange(range);
 		}
+		if(this._opt.formInputId && $('#'+this._opt.formInputId)[0]) {
+			$('#'+this._opt.formInputId).val(this.getValue());
+		}
 	},
 	pasteHandler: function() {
 		var _this = this;
-		$(this).on("paste", function() {
+		$(this).on("paste", function(e) {
+			console.log(e.clipboardData.items);
 			var content = $(this).html();
+			console.log(content);
 			valiHTML = _this._opt.validHtml;
 			content = content.replace(/_moz_dirty=""/gi, "").replace(/\[/g, "[[-").replace(/\]/g, "-]]").replace(/<\/ ?tr[^>]*>/gi, "[br]").replace(/<\/ ?td[^>]*>/gi, "&nbsp;&nbsp;").replace(/<(ul|dl|ol)[^>]*>/gi, "[br]").replace(/<(li|dd)[^>]*>/gi, "[br]").replace(/<p [^>]*>/gi, "[br]").replace(new RegExp("<(/?(?:" + valiHTML.join("|") + ")[^>]*)>", "gi"), "[$1]").replace(new RegExp('<span([^>]*class="?at"?[^>]*)>', "gi"), "[span$1]").replace(/<[^>]*>/g, "").replace(/\[\[\-/g, "[").replace(/\-\]\]/g, "]").replace(new RegExp("\\[(/?(?:" + valiHTML.join("|") + "|img|span)[^\\]]*)\\]", "gi"), "<$1>");
 			if (!/firefox/.test(navigator.userAgent.toLowerCase())) {
@@ -117,5 +128,11 @@ $.fn.extend({
 		if(!$.trim($(this).html())) {
 			$(this).html(_this._opt.placeholader);
 		}
+	},
+	getValue: function() {
+		return $(this).html();
+	},
+	setValue: function(str) {
+		$(this).html(str);
 	}
 });
