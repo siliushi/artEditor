@@ -17,7 +17,8 @@ $.fn.extend({
 				"user-select": "text",
 				"overflow-y": "auto",
 				"text-break": "brak-all",
-				"outline": "none"
+				"outline": "none",
+				"cursor": "text"
 			};
 		$(this).css(styles).attr("contenteditable", true);
 		_this._opt = $.extend(_this._opt, options);
