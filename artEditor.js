@@ -24,6 +24,7 @@ $.fn.extend({
 		try{
 			$(_this._opt.imgTar).on('change', function(e) {
 				var file  = e.target.files[0];
+				e.target.value = '';
 				if(Math.ceil(file.size/1024/1024) > _this._opt.limitSize) {
 					console.error('文件太大');
 					return;
