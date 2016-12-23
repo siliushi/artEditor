@@ -97,4 +97,6 @@ $('#content').artEditor({
 |- service 项目后台数据文件夹
 |- src 项目源文件
 
-### 
+### 项目运行方式
+1. `npm install`下载用来工具
+2. `npm start`页面
