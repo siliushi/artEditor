@@ -60,11 +60,19 @@ $('#content').artEditor({
 	placeholader: '<p>请输入文章正文内容</p>',
 	validHtml: ["br"],
 	uploadSuccess: function(res) {
-		// return img url
+            // 这里是处理返回数据业务逻辑的地方
+            // `res`为服务器返回`status==200`的`response`
+            // 如果这里`return <path>`将会以`<img src='path'>`的形式插入到页面
+            // 如果发现`res`不符合业务逻辑
+            // 比如后台告诉你这张图片不对劲
+            // 麻烦返回 `false`
+            // 当然如果`showServer==false`
+            // 无所谓咯
 		return res.path;
 	},
 	uploadError: function(res) {
-		// something error
+		//这里做上传失败的操作
+        //也就是http返回码非200的时候
 		console.log(res);
 	}
 });
@@ -82,3 +90,11 @@ $('#content').artEditor({
  + 增加拍照上传图片     
 2016-04-17     
  + 增加表单提交功能
+
+### 项目文件说明
+|- dist 项目打包结果文件夹
+|- example 项目案例文件夹
+|- service 项目后台数据文件夹
+|- src 项目源文件
+
+### 

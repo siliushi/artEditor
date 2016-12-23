@@ -32,7 +32,7 @@ gulp.task('bump', function () {
 });
 gulp.task('minifyjs', function () {
     return gulp.src('src/index.js')
-        .pip(gulp.dest('dist'))
+        .pipe(gulp.dest('dist'))
         .pipe(rename({suffix: '.min'}))   //rename压缩后的文件名
         .pipe(uglify())    //压缩
         .pipe(gulp.dest('dist'));  //输出
