@@ -1,5 +1,5 @@
 # artEditor
-artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图片，后续完善其他功能。
+artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图片，后续完善其他功能。新增图片上传之前压缩功能
 [demo](http://baixuexiyang.github.io/artEditor/)，为了更好的效果请将浏览器设置为手机模式
 # 引用
 在页面中引入下面资源
