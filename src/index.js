@@ -33,12 +33,18 @@ $.fn.extend({
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function (f) {
+                    var data = f.target.result,
+                        img = new Image();
+                    img.src = f.target.result;
+                    if(_this._opt.compressSize && Math.ceil(file.size / 1024 / 1024) > _this._opt.compressSize) {
+                        data = _this.compressHandler(img);
+                    }
                     if (_this._opt.showServer) {
-                        _this.upload(f.target.result);
+                        _this.upload(data);
                         return;
                     }
-                    var img = '<img src="' + f.target.result + '" style="width:90%;" />';
-                    _this.insertImage(img);
+                    var image = '<img src="' + data + '" style="width:90%;" />';
+                    _this.insertImage(image);
                 };
             });
             _this.placeholderHandler();
@@ -51,6 +57,46 @@ $.fn.extend({
                 $('#' + _this._opt.formInputId).val(_this.getValue());
             });
         }
+    },
+    compressHandler: function(img) {
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext('2d');
+        var tCanvas = document.createElement("canvas");
+        var tctx = tCanvas.getContext("2d");
+        var initSize = img.src.length;
+        var width = img.width;
+        var height = img.height;
+        var ratio;
+        if ((ratio = width * height / 4000000) > 1) {
+            ratio = Math.sqrt(ratio);
+            width /= ratio;
+            height /= ratio;
+        } else {
+            ratio = 1;
+        }
+        canvas.width = width;
+        canvas.height = height;
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        var count;
+        if ((count = width * height / 1000000) > 1) {
+            count = ~~(Math.sqrt(count) + 1);
+            var nw = ~~(width / count);
+            var nh = ~~(height / count);
+            tCanvas.width = nw;
+            tCanvas.height = nh;
+            for (var i = 0; i < count; i++) {
+                for (var j = 0; j < count; j++) {
+                    tctx.drawImage(img, i * nw * ratio, j * nh * ratio, nw * ratio, nh * ratio, 0, 0, nw, nh);
+                    ctx.drawImage(tCanvas, i * nw, j * nh, nw, nh);
+                }
+            }
+        } else {
+            ctx.drawImage(img, 0, 0, width, height);
+        }
+        var ndata = canvas.toDataURL('image/jpeg', 0.1);
+        tCanvas.width = tCanvas.height = canvas.width = canvas.height = 0;
+        return ndata;
     },
     upload: function (data) {
         var _this = this, filed = _this._opt.uploadField;

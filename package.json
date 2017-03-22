@@ -1,6 +1,6 @@
 {
   "name": "art-editor",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图片，后续完善其他功能。    [demo](http://baixuexiyang.github.io/artEditor/)，为了更好的效果请将浏览器设置为手机模式         # 引用 在页面中引入下面资源    ``` <script src=\"http://code.jquery.com/jquery-1.11.0.min.js\"></script>      <script src=\"artEditor.min.js\"></script>        ```",
   "main": "src/index.js",
   "directories": {

@@ -3,7 +3,7 @@ $(function () {
     $('#content').artEditor({
         imgTar: '#imageUpload',
         limitSize: 5,   // 兆
-        showServer: true,
+        showServer: false,
         uploadUrl: 'http://localhost/PROJECT_OWN/NodeJS/artEditor/service/service.php',
         data: {},
         uploadField: 'image',
