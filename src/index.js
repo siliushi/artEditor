@@ -57,6 +57,13 @@ $.fn.extend({
                 $('#' + _this._opt.formInputId).val(_this.getValue());
             });
         }
+
+        $(this).on('input click', function() {
+            setTimeout(function() {
+                var selection = window.getSelection ? window.getSelection() : document.selection;
+                _this.range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
+            },10);
+        });
     },
     compressHandler: function(img) {
         var canvas = document.createElement("canvas");
@@ -123,7 +130,13 @@ $.fn.extend({
     insertImage: function (src) {
         $(this).focus();
         var selection = window.getSelection ? window.getSelection() : document.selection;
-        var range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
+        var range;
+        if(this.range) {
+            range = this.range;
+            this.range = null;
+        } else {
+            range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
+        }
         if (!window.getSelection) {
             range.pasteHTML(src);
             range.collapse(false);
