@@ -4,6 +4,7 @@ var reload = browsersync.reload;
 var bump = require('gulp-bump')
 var rename = require('gulp-rename')
 var uglify = require('gulp-uglify')
+var plumber = require('gulp-plumber')
 var del = require('del')
 var concat = require('gulp-concat')
 
@@ -30,8 +31,9 @@ gulp.task('bump', function () {
         .pipe(gulp.dest('./'));
 
 });
-gulp.task('minifyjs', function () {
+gulp.task('default', function () {
     return gulp.src('src/index.js')
+        .pipe(plumber())
         .pipe(gulp.dest('dist'))
         .pipe(rename({suffix: '.min'}))   //rename压缩后的文件名
         .pipe(uglify())    //压缩
