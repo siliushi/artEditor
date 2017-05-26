@@ -37,7 +37,10 @@ $.fn.extend({
                         img = new Image();
                     img.src = f.target.result;
                     if(_this._opt.compressSize && Math.ceil(file.size / 1024 / 1024) > _this._opt.compressSize) {
-                        data = _this.compressHandler(img);
+                        // 解决Firefox读取不到图片高、宽
+                        setTimeout(function() {
+                            data = _this.compressHandler(img);
+                        }, 10);
                     }
                     if (_this._opt.showServer) {
                         _this.upload(data);

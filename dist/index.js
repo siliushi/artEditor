@@ -37,7 +37,10 @@ $.fn.extend({
                         img = new Image();
                     img.src = f.target.result;
                     if(_this._opt.compressSize && Math.ceil(file.size / 1024 / 1024) > _this._opt.compressSize) {
-                        data = _this.compressHandler(img);
+                        // 解决Firefox读取不到图片高、宽
+                        setTimeout(function() {
+                            data = _this.compressHandler(img);
+                        }, 10);
                     }
                     if (_this._opt.showServer) {
                         _this.upload(data);
@@ -57,6 +60,13 @@ $.fn.extend({
                 $('#' + _this._opt.formInputId).val(_this.getValue());
             });
         }
+
+        $(this).on('input click', function() {
+            setTimeout(function() {
+                var selection = window.getSelection ? window.getSelection() : document.selection;
+                _this.range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
+            },10);
+        });
     },
     compressHandler: function(img) {
         var canvas = document.createElement("canvas");
@@ -123,7 +133,13 @@ $.fn.extend({
     insertImage: function (src) {
         $(this).focus();
         var selection = window.getSelection ? window.getSelection() : document.selection;
-        var range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
+        var range;
+        if(this.range) {
+            range = this.range;
+            this.range = null;
+        } else {
+            range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
+        }
         if (!window.getSelection) {
             range.pasteHTML(src);
             range.collapse(false);
