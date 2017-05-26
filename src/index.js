@@ -109,11 +109,11 @@ $.fn.extend({
         return ndata;
     },
     upload: function (data) {
-        var _this = this, filed = _this._opt.uploadField;
+        var _this = this, filed = _this._opt.uploadField || 'uploadfile';
         $.ajax({
             url: _this._opt.uploadUrl,
             type: 'post',
-            data: $.extend(_this._opt.data, {filed: data}),
+            data: $.extend(_this._opt.data, {[filed]: data}),
             cache: false,
         })
 

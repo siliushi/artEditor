@@ -18,9 +18,9 @@ artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图�
 ### uploadUrl
   图片上传路劲
 ### data
-  上传图片其他参数
+  上传图片其他参数，例如：{type: 1}  
 ### uploadField
-  上传图片字段
+  上传图片字段, 默认值：uploadfile
 ### placeholader
   富文本编辑器holder
 ### validHtml
@@ -97,7 +97,8 @@ $('#content').artEditor({
  + 解决上传图片光标定位问题    
 2017-05-26    
  + 解决Firefox图片压缩的问题    
-  
+ + 解决上传字段的问题  
+
 ### 项目文件说明
 |- dist 项目打包结果文件夹
 |- example 项目案例文件夹
