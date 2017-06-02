@@ -3,6 +3,7 @@
  * @author ganzw@gmail.com
  * @url    https://github.com/baixuexiyang/artEditor
  */
+
 $.fn.extend({
     _opt: {
         placeholader: '<p>请输入文章正文内容</p>',
@@ -67,6 +68,16 @@ $.fn.extend({
                 _this.range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
             },10);
         });
+
+        if (!/firefox/.test(navigator.userAgent.toLowerCase()) && this._opt.breaks) {
+            $(this).keydown(function(e) {
+                if (e.keyCode === 13) {
+                    document.execCommand('insertHTML', false, '<br/><br/>');
+                    return false;
+                }
+            });
+        }
+        
     },
     compressHandler: function(img) {
         var canvas = document.createElement("canvas");

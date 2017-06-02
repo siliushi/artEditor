@@ -7,6 +7,7 @@ $(function () {
         uploadUrl: 'http://localhost/PROJECT_OWN/NodeJS/artEditor/service/service.php',
         data: {},
         uploadField: 'image',
+        breaks: false,
         placeholader: '<p>请输入文章正文内容</p>',
         validHtml: ["<br/>"],
         formInputId: 'target',

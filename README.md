@@ -33,6 +33,8 @@ artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图�
   表单隐藏域id，如果设置，则编辑器内容会储存到该元素value值
 ### compressSize
   图片超过大小会被压缩，单位（兆）
+### breaks  
+  换行符，非Firefox默认为div，如果该值为true，则换行符替换为br
 
 # Methods
 
@@ -98,7 +100,10 @@ $('#content').artEditor({
 2017-05-26    
  + 解决Firefox图片压缩的问题    
  + 解决上传字段的问题  
-
+2017-06-02   
+ + 解决chrome换行额外增加div   
+   
+   
 ### 项目文件说明
 |- dist 项目打包结果文件夹
 |- example 项目案例文件夹
