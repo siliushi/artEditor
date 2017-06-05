@@ -6,7 +6,7 @@
 
 $.fn.extend({
     _opt: {
-        placeholader: '<p>请输入文章正文内容</p>',
+        placeholader: '请输入文章正文内容',
         validHtml: [],
         limitSize: 3,
         showServer: false
@@ -47,7 +47,7 @@ $.fn.extend({
                         _this.upload(data);
                         return;
                     }
-                    var image = '<img src="' + data + '" style="width:90%;" />';
+                    var image = '<img src="' + data + '" style="max-width:90%;" />';
                     _this.insertImage(image);
                 };
             });
@@ -132,7 +132,7 @@ $.fn.extend({
         .then(function (res) {
                 var src = _this._opt.uploadSuccess(res);
                 if (src) {
-                    var img = '<img src="' + src + '" style="width:90%;" />';
+                    var img = '<img src="' + src + '" style="max-width:100%;" />';
                     _this.insertImage(img);
                 } else {
                     console.log('地址为空啊!大兄弟', src)
@@ -195,18 +195,18 @@ $.fn.extend({
     placeholderHandler: function () {
         var _this = this;
         $(this).on('focus', function () {
-            if ($.trim($(this).html()) === _this._opt.placeholader) {
+            if ($.trim($(this).text()) === _this._opt.placeholader) {
                 $(this).html('');
             }
         })
             .on('blur', function () {
-                if (!$(this).html()) {
-                    $(this).html(_this._opt.placeholader);
+                if (!$(this).text()) {
+                    $(this).html('<p class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</p>');
                 }
             });
 
-        if (!$.trim($(this).html())) {
-            $(this).html(_this._opt.placeholader);
+        if (!$.trim($(this).text())) {
+            $(this).html('<p class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</p>');
         }
     },
     getValue: function () {

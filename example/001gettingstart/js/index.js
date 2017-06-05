@@ -8,7 +8,7 @@ $(function () {
         data: {},
         uploadField: 'image',
         breaks: false,
-        placeholader: '<p>请输入文章正文内容</p>',
+        placeholader: '请输入文章正文内容',
         validHtml: ["<br/>"],
         formInputId: 'target',
         uploadSuccess: function (res) {
