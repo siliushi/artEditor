@@ -67,6 +67,7 @@ $.fn.extend({
                 var selection = window.getSelection ? window.getSelection() : document.selection;
                 _this.range = selection.createRange ? selection.createRange() : selection.getRangeAt(0);
             },10);
+            return false;
         });
 
         if (!/firefox/.test(navigator.userAgent.toLowerCase()) && this._opt.breaks) {
