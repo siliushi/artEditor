@@ -1,0 +1,32 @@
+{
+  "name": "art-editor",
+  "version": "1.0.2",
+  "description": "artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图片，后续完善其他功能。    [demo](http://baixuexiyang.github.io/artEditor/)，为了更好的效果请将浏览器设置为手机模式         # 引用 在页面中引入下面资源    ``` <script src=\"http://code.jquery.com/jquery-1.11.0.min.js\"></script>      <script src=\"artEditor.min.js\"></script>        ```",
+  "main": "src/index.js",
+  "directories": {
+    "example": "例子文件夹"
+  },
+  "scripts": {
+    "start":"gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/followWinter/artEditor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/followWinter/artEditor/issues"
+  },
+  "homepage": "https://github.com/followWinter/artEditor#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-plumber": "^0.6.6",
+    "gulp-uglify": "2.0.0"
+  }
+}
