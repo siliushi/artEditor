@@ -194,18 +194,19 @@ $.fn.extend({
     },
     placeholderHandler: function () {
         var _this = this;
+        var imgReg = /<img\s*([\w]+=(\"|\')([^\"\']*)(\"|\')\s*)*\/?>/;
         $(this).on('focus', function () {
             if ($.trim($(this).text()) === _this._opt.placeholader) {
                 $(this).html('');
             }
         })
             .on('blur', function () {
-                if (!$(this).text()) {
+                if (!$.trim($(this).text()) && !imgReg.test($(this).html())) {
                     $(this).html('<div class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</div>');
                 }
             });
 
-        if (!$.trim($(this).text())) {
+        if (!$.trim($(this).text()) && !imgReg.test($(this).html())) {
             $(this).html('<div class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</div>');
         }
     },
