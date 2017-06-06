@@ -47,7 +47,7 @@ $.fn.extend({
                         _this.upload(data);
                         return;
                     }
-                    var image = '<img src="' + data + '" style="max-width:90%;" />';
+                    var image = '<img src="' + data + '" style="max-width:100%;" />';
                     _this.insertImage(image);
                 };
             });
@@ -201,12 +201,12 @@ $.fn.extend({
         })
             .on('blur', function () {
                 if (!$(this).text()) {
-                    $(this).html('<p class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</p>');
+                    $(this).html('<div class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</div>');
                 }
             });
 
         if (!$.trim($(this).text())) {
-            $(this).html('<p class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</p>');
+            $(this).html('<div class="placeholader" style="pointer-events: none;">' + _this._opt.placeholader + '</div>');
         }
     },
     getValue: function () {
