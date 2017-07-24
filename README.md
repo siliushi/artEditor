@@ -6,12 +6,16 @@ artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图�
 新增开发[web editor](./web/README.md)      
     
 # 引用
-在页面中引入下面资源
+在页面中引入下面资源 
+```   
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  
+<script src="artEditor.min.js"></script>   
 ```
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="artEditor.min.js"></script>
-```
-
+# CDN    
+artEditor cdn 加载方式：    
+```   
+<script src="https://unpkg.com/artEditor@1.0.2"></script>  
+```   
 # Options
 ### imgTar
   图片上传按钮
