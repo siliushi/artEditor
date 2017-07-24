@@ -14,7 +14,7 @@ artEditor是一款基于jQuery的移动端富文本编辑器，支持插入图�
 # CDN    
 artEditor cdn 加载方式：    
 ```   
-<script src="https://unpkg.com/artEditor@1.0.2"></script>  
+<script src="https://unpkg.com/arteditor"></script>  
 ```   
 # Options
 ### imgTar
