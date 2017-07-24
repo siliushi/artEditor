@@ -1,0 +1,181 @@
+@img: "../img";
+.g_editor_container {
+	width:100%;
+	min-height:396px;
+	border: 1px solid #85a2dd;
+	border-top: 4px solid #85a2dd;
+	margin: 20px auto;
+	.header {
+		zoom: 1;
+		background-color: #f8f8fa;
+	}
+	.header:after{
+		display:block;
+		clear:both;
+		content:"";
+		visibility:hidden;
+		height:0
+	}
+	.type {
+		float: left;
+		border-right: 1px solid #fff;
+		padding: 0 13px;
+	}
+	.type:last-child {
+		border: none;
+	}
+	.item {
+		float: left;
+		padding: 10px 6px 12px;
+		text-align: center;
+		font-size: 12px;
+		color: #bdc6d1;
+		cursor: pointer;
+	}
+	.item i {
+		display: block;
+		margin: 0 auto;
+		width: 20px;
+		height: 20px;
+		margin-bottom: 7px;
+	}
+	.undo-icon {
+		background: url("@{img}/undo.png") no-repeat;
+	}
+	.on .undo-icon {
+		background: url("@{img}/undoo.png") no-repeat;
+	}
+	.redo-icon {
+		background: url("@{img}/redo.png") no-repeat;
+	}
+	.on .redo-icon {
+		background: url("@{img}/redoo.png") no-repeat;
+	}
+	.bold-icon {
+		background: url("@{img}/bold.png") no-repeat;
+	}
+	.on .bold-icon {
+		background: url("@{img}/boldo.png") no-repeat;
+	}
+	.italic-icon {
+		background: url("@{img}/italic.png") no-repeat;
+	}
+	.on .italic-icon {
+		background: url("@{img}/italico.png") no-repeat;
+	}
+	.image-icon {
+		background: url("@{img}/image.png") no-repeat;
+	}
+	.on .image-icon {
+		background: url("@{img}/imageo.png") no-repeat;
+	}
+	.title-icon {
+		background: url("@{img}/title.png") no-repeat;
+	}
+	.on .title-icon {
+		background: url("@{img}/titleo.png") no-repeat;
+	}
+	.left-icon {
+		background: url("@{img}/left.png") no-repeat;
+	}
+	.on .left-icon {
+		background: url("@{img}/lefto.png") no-repeat;
+	}
+	.center-icon {
+		background: url("@{img}/center.png") no-repeat;
+	}
+	.on .center-icon {
+		background: url("@{img}/centero.png") no-repeat;
+	}
+	.right-icon {
+		background: url("@{img}/right.png") no-repeat;
+	}
+	.on .right-icon {
+		background: url("@{img}/righto.png") no-repeat;
+	}
+	.justify-icon {
+		background: url("@{img}/justify.png") no-repeat;
+	}
+	.on .justify-icon {
+		background: url("@{img}/justifyo.png") no-repeat;
+	}
+	.more-icon {
+		background: url("@{img}/more.png") no-repeat;
+	}
+	.on .more-icon {
+		background: url("@{img}/moreo.png") no-repeat;
+	}
+	.less-icon {
+		background: url("@{img}/less.png") no-repeat;
+	}
+	.on .less-icon {
+		background: url("@{img}/lesso.png") no-repeat;
+	}
+	.link-icon {
+		background: url("@{img}/link.png") no-repeat;
+	}
+	.on .link-icon {
+		background: url("@{img}/linko.png") no-repeat;
+	}
+	.link-content {
+		position:absolute;
+		width:200px;
+		background:#fff;
+		top:63px;
+		border: 1px solid #ccc;
+		display: none;
+	}
+	.link-content .link-title {
+		background:#f6f6f6;
+		height:34px;
+		line-height:34px;
+		padding-left:15px;
+		font-size: 14px;
+		color: #333333;
+	}
+	.link-content .link-item {
+		padding: 15px;
+		cursor:pointer;
+		font-size: 12px;
+		color: #666666;
+		line-height: 1.5;
+		border:none;
+		background:#fff;
+		width:100%;
+	}
+	.clear-icon {
+		background: url("@{img}/clear.png") no-repeat;
+	}
+	.on .clear-icon {
+		background: url("@{img}/clearo.png") no-repeat;
+	}
+	.editor-contains {
+		margin: 10px;
+		border: 1px solid #dfdfdf;
+	}
+	.editor {
+		width:100%;
+		height:248px;
+		overflow-y: auto;
+	}
+	.arrow-top {
+		position:absolute;
+		width:0;
+		height:0;
+		border-color:transparent transparent #cccccc transparent;
+		border-style:dashed dashed solid dashed;
+		border-width:10px;
+		top:-21px;
+		left: 18px;
+	}
+	.arrow-bottom {
+		position:absolute;
+		width:0;
+		height:0;
+		border-color:transparent transparent #f6f6f6 transparent;
+		border-style:dashed dashed solid dashed;
+		border-width:10px;
+		top:-20px;
+		left: 18px;
+	}
+}

@@ -1,0 +1,220 @@
+.g-editor-container {
+    width: 100%;
+    min-height: 396px;
+    border: 1px solid #85a2dd;
+    border-top: 4px solid #85a2dd;
+    margin: 20px auto
+}
+
+.g-editor-container .header {
+    zoom: 1;
+    background-color: #f8f8fa
+}
+
+.g-editor-container .header:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+
+.g-editor-container .type {
+    float: left;
+    border-right: 1px solid #fff;
+    padding: 0 13px
+}
+
+.g-editor-container .type:last-child {
+    border: none
+}
+
+.g-editor-container .item {
+    float: left;
+    padding: 10px 6px 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #bdc6d1;
+    cursor: pointer
+}
+
+.g-editor-container .item i {
+    display: block;
+    margin: 0 auto 7px;
+    width: 20px;
+    height: 20px
+}
+
+.g-editor-container .undo-icon {
+    background: url(../img/undo.png?_=2d0e9d4) no-repeat
+}
+
+.g-editor-container .on .undo-icon {
+    background: url(../img/undoo.png?_=2d77960) no-repeat
+}
+
+.g-editor-container .redo-icon {
+    background: url(../img/redo.png?_=0ff20a9) no-repeat
+}
+
+.g-editor-container .on .redo-icon {
+    background: url(../img/redoo.png?_=a214ed9) no-repeat
+}
+
+.g-editor-container .bold-icon {
+    background: url(../img/bold.png?_=9d00dd2) no-repeat
+}
+
+.g-editor-container .on .bold-icon {
+    background: url(../img/boldo.png?_=f0d917d) no-repeat
+}
+
+.g-editor-container .italic-icon {
+    background: url(../img/italic.png?_=5c8b32d) no-repeat
+}
+
+.g-editor-container .on .italic-icon {
+    background: url(../img/italico.png?_=b4f3960) no-repeat
+}
+
+.g-editor-container .image-icon {
+    background: url(../img/image.png?_=eb409ad) no-repeat
+}
+
+.g-editor-container .on .image-icon {
+    background: url(../img/imageo.png?_=f3c3d4d) no-repeat
+}
+
+.g-editor-container .title-icon {
+    background: url(../img/title.png?_=c44cd57) no-repeat
+}
+
+.g-editor-container .on .title-icon {
+    background: url(../img/titleo.png?_=2e2a5c8) no-repeat
+}
+
+.g-editor-container .left-icon {
+    background: url(../img/left.png?_=4cbf1c8) no-repeat
+}
+
+.g-editor-container .on .left-icon {
+    background: url(../img/lefto.png?_=dbc107b) no-repeat
+}
+
+.g-editor-container .center-icon {
+    background: url(../img/center.png?_=924372e) no-repeat
+}
+
+.g-editor-container .on .center-icon {
+    background: url(../img/centero.png?_=6403b0b) no-repeat
+}
+
+.g-editor-container .right-icon {
+    background: url(../img/right.png?_=d62db8c) no-repeat
+}
+
+.g-editor-container .on .right-icon {
+    background: url(../img/righto.png?_=37d98d3) no-repeat
+}
+
+.g-editor-container .justify-icon {
+    background: url(../img/justify.png?_=89cefb7) no-repeat
+}
+
+.g-editor-container .on .justify-icon {
+    background: url(../img/justifyo.png?_=40240f5) no-repeat
+}
+
+.g-editor-container .more-icon {
+    background: url(../img/more.png?_=2b20034) no-repeat
+}
+
+.g-editor-container .on .more-icon {
+    background: url(../img/moreo.png?_=cb14ba6) no-repeat
+}
+
+.g-editor-container .less-icon {
+    background: url(../img/less.png?_=62c327d) no-repeat
+}
+
+.g-editor-container .on .less-icon {
+    background: url(../img/lesso.png?_=935a19f) no-repeat
+}
+
+.g-editor-container .link-icon {
+    background: url(../img/link.png?_=47548d9) no-repeat
+}
+
+.g-editor-container .on .link-icon {
+    background: url(../img/linko.png?_=35daff0) no-repeat
+}
+
+.g-editor-container .link-content {
+    position: absolute;
+    width: 200px;
+    background: #fff;
+    top: 63px;
+    border: 1px solid #ccc;
+    display: none
+}
+
+.g-editor-container .link-content .link-title {
+    background: #f6f6f6;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #333
+}
+
+.g-editor-container .link-content .link-item {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    border: none;
+    background: #fff;
+    width: 100%
+}
+
+.g-editor-container .clear-icon {
+    background: url(../img/clear.png?_=b420204) no-repeat
+}
+
+.g-editor-container .on .clear-icon {
+    background: url(../img/clearo.png?_=392f4f5) no-repeat
+}
+
+.g-editor-container .editor-contains {
+    margin: 10px;
+    border: 1px solid #dfdfdf
+}
+
+.g-editor-container .editor {
+    width: 100%;
+    height: 248px;
+    overflow-y: auto
+}
+
+.g-editor-container .arrow-top {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent #ccc;
+    border-style: dashed dashed solid;
+    border-width: 10px;
+    top: -21px;
+    left: 18px
+}
+
+.g-editor-container .arrow-bottom {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent #f6f6f6;
+    border-style: dashed dashed solid;
+    border-width: 10px;
+    top: -20px;
+    left: 18px
+}

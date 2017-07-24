@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../src/style/editor.css">
+</head>
+<body>
+	<div id="J_des_container">
+		<div id="J_des_editor"></div>
+	</div>
+	<button id="getvalue">获取值</button>
+	<button id="setvalue">设置值</button>
+	<script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.0.min.js"></script>
+	<script src="../dist/editor.min.js"></script>
+	<script>
+		var editor = new editor('J_des_container','J_des_editor', {placeholder: '<p class="placeholder">请输入疾病概述</p>', imageUpload: "http://127.0.0.1:8080/upload"});
+		$('#getvalue').on('click', function() {
+			alert(editor.getValue());
+		});
+		$('#setvalue').on('click', function() {
+			editor.setValue("重新设置编辑器内容");
+		});
+	</script>
+</body>
+</html>
