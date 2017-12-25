@@ -43,6 +43,9 @@ $.fn.extend({
                             data = _this.compressHandler(img);
                         }, 10);
                     }
+                    if(_this._opt.beforeUpload && typeof _this._opt.beforeUpload === "function") {
+                        data = _this._opt.beforeUpload(data);
+                    }
                     if (_this._opt.showServer) {
                         _this.upload(data);
                         return;

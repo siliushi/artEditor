@@ -42,7 +42,9 @@ artEditor cdn 加载方式：
 ### compressSize
   图片超过大小会被压缩，单位（兆）
 ### breaks  
-  换行符，非Firefox默认为div，如果该值为true，则换行符替换为br
+  换行符，非Firefox默认为div，如果该值为true，则换行符替换为br   
+### beforeUpload   
+  图片上传之前的回调（function）,参数图片base64数据
 
 # Methods
 
@@ -70,6 +72,10 @@ $('#content').artEditor({
 	uploadField: 'image',
 	placeholader: '<p>请输入文章正文内容</p>',
 	validHtml: ["br"],
+  beforeUpload: function(imgBase64) {
+    // 处理完之后，必须return图片数据   
+    // return imgBase64         
+  },
 	uploadSuccess: function(res) {
             // 这里是处理返回数据业务逻辑的地方
             // `res`为服务器返回`status==200`的`response`
@@ -110,6 +116,9 @@ $('#content').artEditor({
  + 解决上传字段的问题  
 2017-06-02   
  + 解决chrome换行额外增加div   
+2017-12-25   
+ + 增加beforeUpload回调   
+      
    
    
 ### 项目文件说明
