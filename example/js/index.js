@@ -3,8 +3,8 @@ $(function () {
     $('#content').artEditor({
         imgTar: '#imageUpload',
         limitSize: 5,   // 兆
-        showServer: false,
-        uploadUrl: 'http://localhost/PROJECT_OWN/NodeJS/artEditor/service/service.php',
+        showServer: true,
+        uploadUrl: 'http://127.0.0.1:9091/base64Upload',
         data: {},
         uploadField: 'image',
         breaks: false,
@@ -20,17 +20,7 @@ $(function () {
             // 麻烦返回 `false`
             // 当然如果`showServer==false`
             // 无所谓咯
-            var result = JSON.parse(res)
-            if (result['code'] == '100') {
-                return result['data']['url'];
-            } else {
-                switch (result['code']) {
-                    case '101': {
-                        alert('图片太大之类的')
-                    }
-                }
-            }
-            return false;
+            return res;
         },
         uploadError: function (status, error) {
             //这里做上传失败的操作

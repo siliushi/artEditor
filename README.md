@@ -117,7 +117,9 @@ $('#content').artEditor({
 2017-06-02   
  + 解决chrome换行额外增加div   
 2017-12-25   
- + 增加beforeUpload回调   
+ + 增加beforeUpload回调  
+2017-12-25   
+ + 增加服务端demo   
       
    
    
@@ -129,4 +131,12 @@ $('#content').artEditor({
 
 ### 项目运行方式
 1. `npm install`下载用来工具
-2. `npm start`页面
+2. `npm start`页面    
+    
+    
+### 增加服务端demo   
+1、npm install    
+2、node server/index.js   
+访问:   
+127.0.0.1:9091    
+   

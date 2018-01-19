@@ -7,7 +7,7 @@
     "example": "例子文件夹"
   },
   "scripts": {
-    "start":"gulp watch"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,11 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
     "gulp-plumber": "^0.6.6",
-    "gulp-uglify": "2.0.0"
+    "gulp-uglify": "2.0.0",
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.1",
+    "compression": "^1.0.1",
+    "body-parser": "~1.18.2",
+    "fs-extra": "5.0.0"
   }
 }
